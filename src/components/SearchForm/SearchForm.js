@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const SearchForm = ({ onSubmit }) => {
+const SearchForm = ({ setSearchParams }) => {
   const [query, setQuery] = useState('');
 
   const handleFilmChange = ev => {
@@ -12,9 +12,9 @@ const SearchForm = ({ onSubmit }) => {
     if (query.trim() === '') {
       return;
     }
-
-    onSubmit(query);
-    console.log(query);
+    // onSubmit(query);
+    const queryString = query;
+    setSearchParams({ query: queryString });
     setQuery('');
   };
 

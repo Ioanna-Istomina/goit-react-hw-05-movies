@@ -1,4 +1,5 @@
 import { Link, Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
 import s from './MovieDetailsInfo.module.css';
 const MovieDetailsInfo = ({ details }) => {
   const { poster_path, original_title, vote_average, overview, genres } =
@@ -35,7 +36,9 @@ const MovieDetailsInfo = ({ details }) => {
           <p>Reviews</p>
         </Link>
       </div>
-      <Outlet />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
     </main>
   );
 };

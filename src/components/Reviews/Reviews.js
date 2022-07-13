@@ -5,14 +5,13 @@ import ReviewsDetails from 'components/ReviewsDetails';
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const { movieId } = useParams();
-  console.log(reviews);
 
   useEffect(() => {
     getMovieReviews(Number(movieId)).then(reviews => setReviews(reviews));
   }, [movieId]);
   return (
     <div>
-      {reviews > 0 ? (
+      {reviews ? (
         <ReviewsDetails reviews={reviews} />
       ) : (
         <h4 style={{ marginLeft: '40px' }}>

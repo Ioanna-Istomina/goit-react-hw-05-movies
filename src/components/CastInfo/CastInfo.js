@@ -2,9 +2,9 @@ import s from './CastInfo.module.css';
 const CastInfo = ({ cast }) => {
   return (
     <ul className={s.list}>
-      {cast?.map(({ profile_path, name, character }) => {
+      {cast?.map(({ profile_path, name, character, cast_id }) => {
         return (
-          <li key={name} className={s.item}>
+          <li key={cast_id} className={s.item}>
             <img
               className={s.image}
               src={
