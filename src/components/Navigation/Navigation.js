@@ -9,7 +9,7 @@ const toogleActive = active => {
 const Navigation = () => {
   return (
     <nav className={s.nav}>
-      <NavLink to="/" className={toogleActive}>
+      <NavLink to="/" className={toogleActive} exact="true">
         Homepage
       </NavLink>
       <NavLink to="/movies" className={toogleActive}>
