@@ -4,7 +4,7 @@ import { getSearchMovieList } from 'API/movie-api';
 import { useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-export const Movies = () => {
+const Movies = () => {
   // const [query, setQuery] = useState('');
   const [movies, setMovie] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -25,3 +25,4 @@ export const Movies = () => {
   );
 };
 // onSubmit = { setQuery };
+export default Movies;

@@ -2,7 +2,7 @@ import { getTrendingMovie } from '../API/movie-api';
 import { useState, useEffect } from 'react';
 import MovieList from '../components/MovieList';
 
-export const Homepage = () => {
+const Homepage = () => {
   const [movies, setMovie] = useState([]);
 
   useEffect(() => {
@@ -16,3 +16,5 @@ export const Homepage = () => {
     </div>
   );
 };
+
+export default Homepage;

@@ -1,9 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-
-const Navigation = lazy(() =>
-  import('./Navigation' /* webpackChunkName: "navigation" */)
-);
+import Navigation from './Navigation';
 
 const Homepage = lazy(() =>
   import('pages/Homepage' /* webpackChunkName: "homepage" */)
@@ -26,9 +23,8 @@ const Reviews = lazy(() =>
 export const App = () => {
   return (
     <div>
+      <Navigation />
       <Suspense fallback={<div>Loading...</div>}>
-        <Navigation />
-
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/movies" element={<Movies />} />
