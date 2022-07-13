@@ -9,9 +9,10 @@ const Reviews = () => {
   useEffect(() => {
     getMovieReviews(Number(movieId)).then(reviews => setReviews(reviews));
   }, [movieId]);
+  console.log(reviews);
   return (
     <div>
-      {reviews ? (
+      {reviews?.length > 0 ? (
         <ReviewsDetails reviews={reviews} />
       ) : (
         <h4 style={{ marginLeft: '40px' }}>
